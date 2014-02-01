@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+	<title>Listado de Miembros</title>
+{% endblock head %}
+
+{% block contenido %}
+	<h1>Listado de Miembros</h1>
+	
+	<ul>
+		{% for miembros in object_list %}
+			<li> {{ miembros.primer_nombre }}</li>
+		{% endfor %}	
+	</ul>
+	
+	
+{% endblock contenido %}

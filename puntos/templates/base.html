@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	{% block head %}
+
+	{% endblock head %}
+	
+		{% load bootstrap3 %}
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+		{% bootstrap_messages %}
+		<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/estilos.css" />
+</head>
+<body>
+	<header>
+		<div class="container">
+			{# {% block cabecera %} #}
+				
+				<div class="row">
+					<div class="col-lg-4">
+						{% load staticfiles %}
+						<img src="{% static 'img/logo.png' %}" alt="My image"/>
+					</div>
+					<div class="col-lg-8">
+						<h3>Sistema de Recompensa</h3>
+					</div>
+				</div>
+				
+			{# {% endblock cabecera %} #}
+			
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-3 menu">
+				<ul>
+					{% for menu_list in menuUser  %}
+						<li>
+							<div>Img - <a href="{{ menu_list.url }}">{{ menu_list.name }}</a></div>
+						</li>	
+
+					{% endfor %}	
+				</ul>
+			</div>
+			
+			<div class="col-xs-9 contenido">
+					{% block contenido %}
+					{% endblock contenido %}	
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

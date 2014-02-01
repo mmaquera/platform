@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block head %}
+	<title>Registrar Miembros</title>
+	{% load bootstrap3 %}
+
+{% endblock head %}
+
+{% block contenido %}
+
+	<div class="panel">
+	  	<div class="panel-heading">
+	  		<i class="icon icon-chevron-up chevron"></i>
+	  		<i class="icon icon-wrench pull-right"></i> Miembros
+		</div>
+	    
+	    <ul class="nav nav-pills">
+	    	<li class="active">
+	    		<a href="/puntos/miembro">
+	    			<i class="glyphicon glyphicon-cloud"></i>
+	    			<p>Listado</p>
+	    		</a>
+	    	</li>
+	    	<li>
+	    		<a href="/puntos/add">
+	    			<i class="glyphicon glyphicon-plus"></i>
+	    			<p>Agregar</p>
+	    		</a>
+	    	</li>
+	    </ul>
+	</div><!--/panel-->
+
+   	<div class="panel panel-default">
+		{% for miembros in miembro %}
+			<div> {{ miembros.dni }}</div>
+			<div> {{ miembros.primer_nombre }}</div>
+			<div> {{ miembros.apellido_paterno }}</div>
+			<div> {{ miembros.apellido_materno }}</div>
+			<div> {{ miembros.direccion_uno }}</div>
+			<div> {{ miembros.direccion_dos }}</div>
+			<div> {{ miembros.distrito }}</div>
+			<div> {{ miembros.ciudad }}</div>
+			<div> {{ miembros.departamento }}</div>
+			<div> {{ miembros.telf_casa }}</div>
+			<div> {{ miembros.telf_trabajo }}</div>
+			<div> {{ miembros.telf_movil }}</div>
+			<div> {{ miembros.mail_personal }}</div>
+			<div> {{ miembros.mail_trabajo }}</div>
+			<div> {{ miembros.fecha_nacimiento }}</div>
+			<div> {{ miembros.fecha_ingreso }}</div>
+			<div> {{ miembros.rol }}</div>
+		{% endfor %}
+   	</div>
+</div>
+
+	
+	
+{% endblock contenido %}
